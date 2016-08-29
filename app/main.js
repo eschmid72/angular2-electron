@@ -1,3 +1,6 @@
+const sqlite3 = require('sqlite3');
+console.log(sqlite3);
+
 const electron = require('electron');
 // Module to control application life.
 const {app} = electron;

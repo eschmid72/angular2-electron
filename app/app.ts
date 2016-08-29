@@ -32,7 +32,7 @@ class ByteFormatPipe implements PipeTransform {
       </p>
     </div>
 
-    <div class="media" *ngFor="#image of images">
+    <div class="media" *ngFor="let image of images">
       <div class="media-left">
         <a href="#">
           <img class="media-object" src="{{image.path}}" style="max-width:200px">

@@ -2,6 +2,14 @@ var path = require('path');
 var webpack = require('webpack');
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 
+var externals = {}, _externals = [
+  'sqlite3', 'sequelize'
+];
+
+_externals.forEach(function(s) {
+  externals[s] = 'commonjs ' + s;
+});
+
 module.exports = {
   devtool: 'source-map',
   debug: true,
@@ -14,6 +22,8 @@ module.exports = {
     ],
     'app': './app/app'
   },
+
+  externals: externals,
 
   output: {
     path: __dirname + '/build/',
